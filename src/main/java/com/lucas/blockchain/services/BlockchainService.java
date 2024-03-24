@@ -19,7 +19,7 @@ public class BlockchainService {
 
     private final Blockchain blockchain;
     private List<Transaction> pendingTransaction = new ArrayList<>();
-    private final int blockSizeLimit = 0;
+    private final int blockSizeLimit = 3;
 
     public BlockchainService(Blockchain blockchain) {
         this.blockchain = blockchain;

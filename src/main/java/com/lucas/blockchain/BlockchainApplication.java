@@ -5,6 +5,7 @@ import com.lucas.blockchain.models.Blockchain;
 import com.lucas.blockchain.models.Transaction;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,16 +15,17 @@ public class BlockchainApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BlockchainApplication.class, args);
+	}
 
+	@Bean
+	public Blockchain blockchain() {
 		Block genesisBlock = createGenesisBlock();
 		Blockchain blockchain = new Blockchain();
 		blockchain.setChain(new ArrayList<>());
 		blockchain.getChain().add(genesisBlock);
-
-		System.out.println(genesisBlock);
-		System.out.println(blockchain);
-
+		return blockchain;
 	}
+
 
 	private static Block createGenesisBlock() {
 		Block genesisBlock = new Block();
