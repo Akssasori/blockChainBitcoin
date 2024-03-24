@@ -5,6 +5,7 @@ import com.lucas.blockchain.models.Block;
 import com.lucas.blockchain.models.Blockchain;
 import com.lucas.blockchain.models.Transaction;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Log4j2
 public class BlockchainService {
 
 
@@ -29,10 +31,10 @@ public class BlockchainService {
 
         pendingTransaction.add(transaction);
         if (pendingTransaction.size() >= blockSizeLimit) {
-            System.out.println("block size complete, create new block");
+            log.info("block size complete, create new block");
             createBlock();
         }
-        return ResponseEntity.ok("Trasaction added to block transactions");
+        return ResponseEntity.ok("Transaction added, then a block will be created");
     }
 
     private void createBlock() {
@@ -46,6 +48,7 @@ public class BlockchainService {
         newBlock.setHash(calculateHash(newBlock));
 
         blockchain.getChain().add(newBlock);
+        log.info("Block created with translations: {}", newBlock.getTransactions());
         pendingTransaction.clear();
     }
 
