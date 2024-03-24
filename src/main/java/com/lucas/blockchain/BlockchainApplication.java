@@ -23,6 +23,7 @@ public class BlockchainApplication {
 		Blockchain blockchain = new Blockchain();
 		blockchain.setChain(new ArrayList<>());
 		blockchain.getChain().add(genesisBlock);
+		System.out.println(blockchain);
 		return blockchain;
 	}
 
