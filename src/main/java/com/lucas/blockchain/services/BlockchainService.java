@@ -34,6 +34,7 @@ public class BlockchainService {
             log.info("block size complete, create new block");
             createBlock();
         }
+        log.info("Sending from {} to {} with a value of {} has been added, soon the block will be created", transaction.getSender(), transaction.getRecipient(), String.format("%.8f",transaction.getAmount()));
         return ResponseEntity.ok("Transaction added, then a block will be created");
     }
 

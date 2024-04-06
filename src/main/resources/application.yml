@@ -6,3 +6,7 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
+#logging:
+#  level:
+#    root: off
+#    web: off
