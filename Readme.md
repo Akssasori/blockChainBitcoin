@@ -4,8 +4,6 @@
 Neste projeto venho mostra usando o java o funcionamento de um blockchain igual é a do Bitcoin (claro que bem mais simples). Quero passar o entendimento de como essa tecnologia funciona
 
 
-
-
 ## Autores
 
 - [@Akssasori](https://github.com/Akssasori)
@@ -33,3 +31,6 @@ Neste projeto venho mostra usando o java o funcionamento de um blockchain igual 
 - [Medium](https://medium.com/the-crypto-block/8-concepts-that-will-help-you-understand-blockchain-technology-c51b0941bf19)
 
 
+## Vídeo youtube
+
+https://youtu.be/Q4tqKDQurBs
